@@ -7,7 +7,7 @@ import { Label } from '../ui/label';
 import { Checkbox } from '../ui/checkbox';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '../ui/select';
 import { toast } from 'sonner@2.0.3';
-import { projectId, publicAnonKey } from '../../utils/supabase/info';
+import { projectId, publicAnonKey, supabaseUrl } from '../../utils/supabase/info';
 
 interface SignupProps {
   onSignup: (email: string, role: string, name: string, company: string) => void;
@@ -66,7 +66,7 @@ export function Signup({ onSignup, onNavigateToLogin }: SignupProps) {
 
     try {
       // Call Supabase signup endpoint
-      const response = await fetch(`https://${projectId}.supabase.co/functions/v1/make-server-1f923fcd/auth/signup`, {
+      const response = await fetch(`${supabaseUrl}/functions/v1/make-server-1f923fcd/auth/signup`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

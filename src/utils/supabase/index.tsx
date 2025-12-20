@@ -81,7 +81,7 @@ export type { UseVectorStoreReturn } from './useVectorStore';
 // Configuration
 // ============================================
 
-export { projectId, publicAnonKey } from './info';
+export { projectId, publicAnonKey, supabaseUrl, getSupabaseUrl } from './info';
 
 // ============================================
 // Module Name Constants

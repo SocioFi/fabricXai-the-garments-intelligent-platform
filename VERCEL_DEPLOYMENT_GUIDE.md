@@ -92,23 +92,34 @@ Before deploying, you need to configure environment variables. Click **"Environm
 
 #### Required Environment Variables
 
-For the frontend application, you may need:
+The application now supports environment variables for production deployments. Set these in Vercel:
 
-- `VITE_SUPABASE_URL` - Your Supabase project URL
+- `VITE_SUPABASE_URL` - Your Supabase project URL (Recommended)
   - Format: `https://YOUR_PROJECT_ID.supabase.co`
   - Example: `https://elznbletkunibhicbizb.supabase.co`
+  - Found in: Supabase Dashboard → Settings → API → Project URL
 
-- `VITE_SUPABASE_ANON_KEY` - Your Supabase anonymous/public key
+- `VITE_SUPABASE_ANON_KEY` - Your Supabase anonymous/public key (Recommended)
   - Found in: Supabase Dashboard → Settings → API → `anon` `public` key
+  - This is safe to expose in the frontend (it's designed to be public)
 
-#### Optional Environment Variables
+- `VITE_SUPABASE_PROJECT_ID` - Your Supabase project ID (Optional)
+  - Format: `YOUR_PROJECT_ID`
+  - Only needed if you're not providing `VITE_SUPABASE_URL`
+  - Found in: Supabase Dashboard → Settings → API → Project URL (extract the ID)
 
-If you're using environment variables in your Vite app (prefixed with `VITE_`), add them here.
+**Note**: The application will work without these environment variables (it falls back to hardcoded values), but **it's highly recommended to set them for production** to:
+- Use different Supabase projects for different environments
+- Keep credentials out of source code
+- Easily switch between environments
 
-**Note**: Currently, your Supabase configuration is hardcoded in `src/utils/supabase/info.tsx`. If you want to use environment variables instead, you'll need to:
+#### How It Works
 
-1. Update `src/utils/supabase/info.tsx` to read from `import.meta.env.VITE_SUPABASE_URL` and `import.meta.env.VITE_SUPABASE_ANON_KEY`
-2. Add these as environment variables in Vercel
+The application reads environment variables in this priority order:
+1. **Environment variables** (if set) - `VITE_SUPABASE_URL`, `VITE_SUPABASE_ANON_KEY`, `VITE_SUPABASE_PROJECT_ID`
+2. **Hardcoded fallback values** (if environment variables are not set)
+
+This ensures backward compatibility while enabling environment-based configuration.
 
 ### 2.4 Configure for All Environments
 

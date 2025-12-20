@@ -17,6 +17,7 @@ import { toast } from "sonner@2.0.3";
 import {
   projectId,
   publicAnonKey,
+  supabaseUrl,
 } from "../../utils/supabase/info";
 import logoImage from "figma:asset/6b4cf6e4e338085095ecc8446ad35e7b17ea5cfe.png";
 
@@ -78,7 +79,7 @@ export function Login({
     try {
       // Call Supabase login endpoint
       const response = await fetch(
-        `https://${projectId}.supabase.co/functions/v1/make-server-1f923fcd/auth/login`,
+        `${supabaseUrl}/functions/v1/make-server-1f923fcd/auth/login`,
         {
           method: "POST",
           headers: {
