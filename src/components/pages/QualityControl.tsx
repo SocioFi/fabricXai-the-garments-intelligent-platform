@@ -448,9 +448,12 @@ export function QualityControl({ initialSubPage = 'dashboard', onAskMarbim }: Qu
 
   async function seedInitialQualityData() {
     const initialInspections = inlineInspectionsData.map(item => ({ ...item, type: 'inline-inspection' }));
-    const initialAudits = finalAuditData.map(item => ({ ...item, type: 'final-audit' }));
-    const initialDefects = defectTrackingData.map(item => ({ ...item, type: 'defect' }));
-    const initialLabs = labTestData.map(item => ({ ...item, type: 'lab-test' }));
+    const initialAudits = aqlResultsData.map(item => ({ ...item, type: 'final-audit' }));
+    const initialDefects = defectsLogData.map(item => {
+      const { type: defectType, ...rest } = item;
+      return { ...rest, defectType, type: 'defect' };
+    });
+    const initialLabs = labResultsData.map(item => ({ ...item, type: 'lab-test' }));
     
     for (const inspection of initialInspections) {
       const id = `inspection-${inspection.id}-${Date.now()}`;

@@ -181,7 +181,7 @@ const shipmentTrendData = [
   { month: 'Jul', ocean: 52, air: 15, road: 10 },
   { month: 'Aug', ocean: 48, air: 18, road: 9 },
   { month: 'Sep', ocean: 61, air: 14, road: 11 },
-  { month: 'Oct', ocean: 55, air: 20, air: 12 },
+  { month: 'Oct', ocean: 55, air: 20, road: 12 },
   { month: 'Nov', ocean: 58, air: 16, road: 10 },
 ];
 

@@ -63,6 +63,8 @@ Ensure your `package.json` has the correct build script:
 
 The build output directory is configured in `vite.config.ts` as `build` (default for Vite).
 
+**Important**: The project includes a `vercel.json` file that configures Vercel to use the `build` directory as the output directory. This ensures Vercel correctly finds your built files after the build process completes.
+
 ## Step 2: Set Up Vercel Project
 
 ### 2.1 Import Project from GitHub
