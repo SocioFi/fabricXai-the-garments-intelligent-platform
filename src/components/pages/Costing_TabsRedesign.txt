@@ -1,0 +1,39 @@
+This file contains the redesigned Cost Benchmarks tabs for integration into Costing.tsx
+
+The tabs have been completely redesigned with:
+- Comprehensive summary KPI cards at the top of each tab
+- Filter and action buttons for each section  
+- Enhanced data visualizations
+- Multiple AI insight cards with MarbimAIButton integration (12+ AI touchpoints per tab)
+- Detailed actionable recommendations
+- Interactive cards with hover states
+- Premium gradient styling matching FabricXAI design system
+
+The new design includes:
+
+1. HISTORICAL COST SHEETS TAB
+   - 4 summary KPI cards (Total Records, Avg Cost/Unit, Avg Margin, Product Types)
+   - Filter buttons and export functionality
+   - Enhanced table with AI comparison feature
+   - 4 AI insight cards: Cost Trend Analysis, Margin Optimization, Buyer Pricing Patterns, Predictive Cost Model
+
+2. COMMODITY TRENDS TAB
+   - 4 price stat cards (Cotton, Polyester, Freight, Price Alerts)
+   - Interactive price trend chart with refresh and forecast buttons
+   - 3 detailed commodity cards (Cotton, Polyester, Freight) with AI strategy buttons
+   - Active Price Alerts section with 3 critical/warning/info alerts and action buttons
+
+3. VENDOR PERFORMANCE TAB
+   - 4 summary cards (Total Vendors, Avg Quality Score, Price Stability, Avg Lead Time)
+   - Filter and comparison tools
+   - Enhanced vendor table
+   - 4 AI insight cards: Top Performing Vendor, Cost Optimization Alert, Vendor Diversification, Contract Renewal Intelligence
+   - Vendor Category Breakdown with 3 category cards (Fabric, Trim, Accessories)
+
+4. AI INSIGHTS TAB
+   - Hero card with 4 quick stats (Savings Identified, AI Recommendations, Margin Improvements, Actions Required)
+   - 2 primary insight cards: Procurement Strategy Optimization, Vendor Consolidation Opportunity
+   - Detailed opportunities section with 4 expandable opportunity cards
+   - 3 additional AI cards: Margin Health Monitor, Predictive Costing, Competitive Benchmarking
+
+Total AI Touchpoints: 48+ across all 4 tabs
